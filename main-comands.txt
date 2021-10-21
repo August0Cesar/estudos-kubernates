@@ -1,0 +1,17 @@
+# Comando para criar um pod.
+kubectl run <name-pod> --image=<name:version>
+
+# Comando para ver em tempo real a criacao de um pod
+kubectl get nodes --watch
+
+# Comando para ver informações do pod
+kubectl describe pods <name-pod>
+
+# Comando para criar um pod apartir de um arquivo declarativo.
+kubectl apply -f file.yaml
+
+#Comando para deletar um pod
+kubectl delete pod <nome-pod>
+
+#Comando para executar comandos dentro do container do pod
+kubectl exec -it portal-noticias -- bash
