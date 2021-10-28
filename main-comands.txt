@@ -1,6 +1,9 @@
 # Comando para criar um pod.
 kubectl run <name-pod> --image=<name:version>
 
+# Comando para ver os pods
+kubectl get nodes -o wide
+
 # Comando para ver em tempo real a criacao de um pod
 kubectl get nodes --watch
 

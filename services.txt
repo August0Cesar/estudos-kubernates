@@ -1,0 +1,12 @@
+Services 
+
+* Service do tipo ClusterIP: 
+    Habilita a comunicação entre pods dentro do mesmo cluster.
+* Service do tipo NodePort: 
+    Habilita a comunicação da rede externa com o pod 
+    ao mesmo tempo incorpora as funções do service ClusterIP.
+* Service do tipo LoadBalancer: 
+    Integra automaticamente com os cloud providers Google, AWS e Azure
+    Incorpora as funções do services ClusterIP e NodePort.
+    # Um LoadBalancer é capaz de automaticamente utilizar 
+      um balanceador de carga de um cloud provider.
