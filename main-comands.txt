@@ -18,3 +18,28 @@ kubectl delete pod <nome-pod>
 
 #Comando para executar comandos dentro do container do pod
 kubectl exec -it portal-noticias -- bash
+
+-------------------------------------------------------------------------------
+##deployments
+Deplpyments são uma camada acima dos replicasets, tendo o mesmo comportamento de um replicaset porém
+com umas funções a mais como poder fazer o versionamento de mudanças.
+
+
+#Comando para aplicar um deployment
+kubectl appy -f <arquivo-declarativo.yaml>
+
+#Comando para ver os deployments
+kubectl get deployments
+
+-Versionando os deployments
+    #Comando para ver as versoes de um deployments
+    kubectl rollout history deployment <name-deployment>
+
+    #Comando para subir uma nova mudança no deployment e guardar a mudança
+    kubectl apply -f <arquivo-declarativo.yaml> --record
+
+    #Comando para anotar a mudança inserida e guardar como CHANGE-CAUSE
+    kubectl annotate  deployment <name-deployment> kubernates.io/change-cause="<mensagem da mudança>"
+
+    #Comando para voltar uma revisão/versão epecífica ou rollback
+    kubectl rollout undo deployment <nome-deployment> --to-revision=<numero-revisão>
