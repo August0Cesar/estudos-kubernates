@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: /pasta-de-arquivos
+          name: pod-volume
+  volumes:
+    - name: pod-volume
+      hostPath:
+        path: /C/Users/Daniel/Desktop/uma-pasta-no-host
+        type: Directory

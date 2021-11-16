@@ -43,3 +43,13 @@ kubectl get deployments
 
     #Comando para voltar uma revisão/versão epecífica ou rollback
     kubectl rollout undo deployment <nome-deployment> --to-revision=<numero-revisão>
+
+-------------------------------------------------------------------------------
+##PV Persistente Volumes
+Usado para persistir arquivos ou diretórios
+
+# pv hostPath usado para persistir arquivos ou diretórios entre host(máquina que esta rodando o kuebrnates) e os pods.
+O volume é dependente do pod mas independente de containers. Ou seja enquanto o pods estiver vivo o volume existe.
+
+#Exemplo para usar volume (Nesse exemplo usando Disk) no Google Cloude Engine:
+Pod -> PVC(Persistente Volume Claim) -> PV(Persistente Volume)
